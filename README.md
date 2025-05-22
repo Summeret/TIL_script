@@ -22,3 +22,9 @@
 * `let liActive = document.querySelector('li.active');` -> 공백이 없으면 li에 들어있는 클래스 active만 잡는다
 * `var pwIO = document.querySelector('input[type*=pass]');` -> input의 type이 pass를 포함하고 있는것 (input / output의 약자 IO)
 * `let gederChk = docment.querySelector('input[name=gender]');` 
+-----
+## a태그 기본 이벤트 동작 취소
+* `a`태그를 이벤트 객체로 사용 시 대상을 터치 또는 클릭하면 세로 스크롤이 최상단으로 올라가는 문제점리 발생한다.
+* **해결법** : 이벤트함수 내에 익명함수 및 화살표함수를 작성하고 매개변수에 `e.preventDefault()`를 작성한다.
+* (예) `a객체.addEventListener('click',function(e){e.preventDefault();})`
+* (예) `a객체.addEventListener('click',(e)=>e.preventDefalut();)`
