@@ -1,0 +1,28 @@
+/* scale.css */
+body,html {padding:0 10px; background-color:#f5f5f5;}
+main {
+    max-width:420px; min-width:320px; margin:30px auto 0;
+}
+main h1 {
+    font-size:1.5rem; font-weight:600;
+}
+main p {
+    margin:20px 0;
+}
+main .info {border:1px solid red;}
+main .info li {}
+main .info li:nth-child(1) {margin-bottom:10px}
+main .info li span {
+    font-weight:500;
+}
+main .info li input {
+    border-bottom:1px solid rgba(0,0,0,0.5);
+}
+main #result_btn {
+    background-color:#B0DB9C; color:#fff; 
+    width:300px; height:40px;
+    border-radius:50px;
+    margin:50px 0 20px;
+    font-weight:500;
+}
+main #result {border:1px solid blue;}
