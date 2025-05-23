@@ -16,12 +16,12 @@ main .info {}
 main .info li {}
 main .info li:nth-child(1) {margin-bottom:15px}
 main .info li span {
-    font-weight:500;
+    font-weight:500; font-size:0.875rem;
 }
 main .info li input {
     background:none;
     border-bottom:1px solid #333;
-    width:100px; height:20px;
+    width:80px; height:15px; 
 }
 main #result_btn {
     background-color:#B0DB9C; color:#fff; 
@@ -30,4 +30,6 @@ main #result_btn {
     margin:40px 0 20px;
     font-weight:500;
 }
-main #result {}
+main #result {font-weight:500; line-height:1.6;}
+/* 자바스크립트에서 생성한 HTML 꾸미기 속성 */
+main #result em {color:#f00; font-weight:600;}
