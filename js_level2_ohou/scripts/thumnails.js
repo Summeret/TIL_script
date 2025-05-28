@@ -1,0 +1,1 @@
+//thumnails.js

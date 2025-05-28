@@ -1,0 +1,115 @@
+/* product.css */
+main {
+    background-color:aqua;
+    width:995px; margin:123px auto;
+}
+main .path {
+    margin-bottom:26px;
+    font-size:0.875rem;
+}
+main section {
+    display:grid;
+    grid-template-columns:630px 341px;
+    justify-content:space-between;
+}
+main section .left_thumnail {
+    background-color:yellow;
+    display:flex;
+}
+main section .left_thumnail .small {}
+main section .left_thumnail .small a {
+    margin-bottom:10px;
+    width:56px; height:56px;
+    border-radius:5px;
+    display:block;
+    overflow:hidden;
+}
+main section .left_thumnail .small a:last-child {margin-bottom:0;}
+main section .left_thumnail .small a img {}
+main section .left_thumnail .big {
+    width:calc(100% - (56px + 15px)); /* calc 계산식을 써서 상대적으로 처리하기 */
+    margin-left:15px;
+}
+main section .left_thumnail .big img {
+    width:100%; /* 이미지의 크기는 부모를 따라가도록 100% 설정해주기 */
+}
+main section .right_order {
+    background-color:lime;
+}
+main section .right_order >* {
+    margin-bottom:25px; /* 일정하게 떨어져있다면 */
+    background-color:yellow;
+} 
+main section .right_order .brand {}
+main section .right_order h1 {
+    font-size:1.375rem;
+}
+main section .right_order .review {}
+main section .right_order .review .score {}
+main section .right_order .review .score em {}
+main section .right_order .review .num {}
+main section .right_order .sale_price {}
+main section .right_order .sale_price em {}
+main section .right_order .sale_price del {}
+main section .right_order > .price {
+    font-size:2rem;
+}
+main section .right_order > .price em {
+    font-weight:700;
+}
+main section .right_order .benefit_delivery {
+    overflow:hidden;
+}
+main section .right_order .benefit_delivery dt {
+    width:80px; background-color:pink;
+    float:left;
+}
+main section .right_order .benefit_delivery dd {
+    width:calc(100% - 80px); background-color:blue;
+    float:right;
+}
+main section .right_order .benefit_delivery dd:nth-of-type(6) {
+    width:261px; line-height:46px;
+    background-color:#eee;
+    padding-left:10px; 
+}
+main section .right_order .benefit_delivery dd em {}
+main section .right_order .product_option {
+    display:flex; flex-flow:column nowrap;
+}
+main section .right_order .product_option >* {
+    padding-left:17px;
+    border:1px solid #aaa;
+    border-radius:5px; line-height:44px;
+}
+main section .right_order .product_option select:nth-child(1) {
+    margin-bottom:25px;
+}
+main section .right_order .product_option select {}
+main section .right_order .product_option select option {}
+main section .right_order .total {
+    display:flex;
+    justify-content:space-between;
+}
+main section .right_order .total p {
+    font-size:0.875rem;
+}
+main section .right_order .total .price {}
+main section .right_order .total .price em {
+    font-size:1.25rem; font-weight:700;
+}
+main section .right_order .btn_group {
+    display:flex; justify-content:space-between;
+}
+main section .right_order .btn_group * {
+    border-radius:5px;
+    border:1px solid #59AFFF;
+    width:165.5px; height:57px;
+    font-size:1.063rem;
+}
+main section .right_order .btn_group #cart_btn {
+    color:#59AFFF; background-color:#fff;
+}
+main section .right_order .btn_group #buy_btn {
+    color:#fff; background-color:#59AFFF;
+}

@@ -47,12 +47,86 @@
         
         console.log(result(num1)); //true
         console.log('============ 조건문');
-        if (){   //조건이 참이냐 거짓이냐에 따라 실행여부가 결정
+        if (5<7){   //조건이 참이냐 거짓이냐에 따라 실행여부가 결정
             console.log('조건이 참일 때 실행되는 문구');
         }
+        console.log('---------------- 05.28 조건문');
+        //if(조건식){ 조건식 결과가 참일때 실행되는 스크립트 }
+        //const userId = prompt('아이디를 입력하세요.');
+        /* if(userId){
+            alert(userId+'님 안녕하세요'); //prompt가 받은 값을 userId에 대입하고 그 값이 참이면 실행한다.
+        } //참,거짓을 구분할수있는 데이터 */
+        
+        //관리자 아이디 : admin
+        //관리자만 인식해서 인사하는 조건 알고리즘
+        /* if(userId == 'admin'){
+            alert('관리자님 안녕하세요');
+        } */
+        //관리자가 아닌 사람이 접속하면 일반사용자로 판단해서 인사하는 알고리즘
+        //회원님 안녕하세요
+        /* if(userId != 'admin'){
+            alert('회원님 안녕하세요');
+        } */
     </script>
 </head>
 <body>
-    
+    <div id="join">
+        <input type="text" name="user_id" placeholder="아이디를 입력하세요">
+        <button type="button" id="id_overlap_btn">아이디중복확인</button>
+        <p class="overlap_error_msg"><!-- 오류메세지출력위치 --></p>
+    </div>
+    <!-- 
+    관리자와 동일한 아이디를 할 수 없는 아이디 중복확인 알고리즘
+    1. 사용자가 아이디를 입력했다.
+    2. 아이디중복확인 버튼을 클릭했다.
+    3. 조건) 만약 사용자가 아이디가 'admin'이라면 
+    4. 오류메세지 출력. '사용중인 아이디입니다. 다른 아이디를 입력하세요.'
+    -->
+    <div class="print">
+        <input type="number" value="1" class="page_num">
+        <button type="button" id="print_btn">인쇄</button>
+    </div>
+    <!-- 
+    2장 이상 입력 후 인쇄 버튼 클릭 시 인쇄가능 window.print()
+    그 이하일 경우 '최소 2장 이상부터 인쇄가 가능합니다' 경고메세지 출력
+    -->
+
+    <!-- script가 html읽기 전에 읽어져서 오류가 발생. -> 위치를 body 닫히기전 마지막 자식 다음에 작성해서 오류 해결 -->
+    <script>
+        //관리자와 동일한 아이디를 할 수 없는 아이디 중복확인 알고리즘
+        const userId = document.querySelector('input[name=user_id]')
+        const idOverlapBtn = document.querySelector('#id_overlap_btn')
+        const overlapMsg = document.querySelector('.overlap_error_msg')
+        console.log(userId, idOverlapBtn, overlapMsg);
+
+        //실시간 추적이 아니라 버튼을 클릭했을때 실행된다 -> 버튼에 대한 이벤트안에서 아이디를 입력하는 조건문이 존재한다.
+
+        //버튼을 클릭했을 때
+        idOverlapBtn.addEventListener('click',idChk)
+        function idChk(){
+            console.log(userId.value); //input의 값을 확인하고싶음, input의 변수명 = userID, 값 = value => 입력창에 작성한 글이 console에 출력되는지 확인.
+            if(userId.value == 'admin'){  // 사용자가 입력(input=userId)한 값(value)이 admin과 같으면
+                return overlapMsg.textContent = '사용중인 아이디입니다. 다른 아이디를 입력하세요.'  //'사용중인~하세요.'를 출력하겠다.
+            }
+            if(userId.value == ''){
+                return overlapMsg.textContent = '아이디가 입력되지 않았습니다. 아이디를 입력해주세요.'
+            }
+        } //input 이라면 value, 그외 태그라면 textConctent
+
+        //인쇄알고리즘
+        const pageNum = document.querySelector('.page_num');
+        const printBtn = document.querySelector('#print_btn');
+        console.log(pageNum, printBtn);
+        // 버튼 클릭 시
+        printBtn.addEventListener('click',printChk)
+        function printChk(){
+            if(pageNum.value >= 2){
+                return window.print();
+            }
+            if(pageNum.value <= 1){
+                return window.alert('최소 2장 이상부터 인쇄가 가능합니다.')
+            }
+        }
+    </script>
 </body>
 </html>
