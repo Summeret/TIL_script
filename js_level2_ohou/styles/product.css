@@ -1,4 +1,5 @@
 /* product.css */
+body,html {scroll-behavior:smooth;} /* 스크롤 애니메이션 동작 */
 main {
     background-color:aqua;
     width:995px; margin:123px auto;
@@ -65,7 +66,7 @@ main section .right_order .benefit_delivery dt {
     float:left;
 }
 main section .right_order .benefit_delivery dd {
-    width:calc(100% - 80px); background-color:blue;
+    width:calc(100% - 80px); background-color:skyblue;
     float:right;
 }
 main section .right_order .benefit_delivery dd:nth-of-type(6) {
@@ -87,6 +88,18 @@ main section .right_order .product_option select:nth-child(1) {
 }
 main section .right_order .product_option select {}
 main section .right_order .product_option select option {}
+/* js에서 select 클릭 시 출력되는 영역 시작 */
+main section .right_order .order_select {}
+main section .right_order .order_select .list {}
+main section .right_order .order_select .list .color {}
+main section .right_order .order_select .list .size {}
+main section .right_order .order_select .close {}
+main section .right_order .order_select .oeder_num {}
+main section .right_order .order_select .oeder_num #minus {}
+main section .right_order .order_select .oeder_num [name=user_num] {}
+main section .right_order .order_select .oeder_num #plus {}
+main section .right_order .order_select .price {}
+/* js에서 select 클릭 시 출력되는 영역 끝 */
 main section .right_order .total {
     display:flex;
     justify-content:space-between;
@@ -113,3 +126,6 @@ main section .right_order .btn_group #cart_btn {
 main section .right_order .btn_group #buy_btn {
     color:#fff; background-color:#59AFFF;
 }
+main .info {height:100vh;}
+main #review {height:100vh; background-color:yellow;}
+main .board {height:100vh;}

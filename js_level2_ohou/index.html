@@ -11,7 +11,15 @@
 </head>
 <body>
     <main>
-        <div class="path">반려동물 > 강아지 > 강아지 패션 > 패딩 아우터</div>
+        <div class="path">
+            <a href="#">반려동물</a>
+            <span>></span> <!-- &gt; -->
+            <a href="#">강아지</a>
+            <span>></span> 
+            <a href="#">강아지 패션</a>
+            <span>></span> 
+            <a href="#">패딩 아우터</a>
+        </div>
         <section>
             <div class="left_thumnail">
                 <div class="small">
@@ -66,6 +74,21 @@
                         <option value="m">M(39,900원)</option>
                     </select>
                 </div>
+                <!-- js에서 select 클릭 시 출력되는 영역 시작 -->
+                <div class="order_select">
+                    <p class="list"> 
+                        색상:<em class="color">블랙</em>/
+                        사이즈:<em class="size">S</em> <!-- 동적으로 따로 처리해야하기 때문에 태그도 개별처리 -->
+                    </p>
+                    <a href="#" class="close">X</a>
+                    <div class="order_num">
+                        <botton type="botton" id="minus">-</botton>
+                        <input type="number" value="1" name="user_num">
+                        <botton type="botton" id="plus">+</botton>
+                    </div>
+                    <p class="price"><em>39,900</em>원</p>
+                </div>
+                <!-- js에서 select 클릭 시 출력되는 영역 끝 -->
                 <div class="total">
                     <p>주문금액</p>
                     <p class="price"><em>0원</em></p>
@@ -76,6 +99,9 @@
                 </div>
             </div>
         </section>
+        <section class="info">상품정보</section>
+        <section id="review">리뷰</section> <!-- html에서 스크롤이동을 하려면 id로 이름설정 -->
+        <section class="board">문의</section>
     </main>
 </body>
 </html>
