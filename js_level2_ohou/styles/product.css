@@ -90,15 +90,24 @@ main section .right_order .product_option select {}
 main section .right_order .product_option select option {}
 /* js에서 select 클릭 시 출력되는 영역 시작 */
 main section .right_order .order_select {}
-main section .right_order .order_select .list {}
-main section .right_order .order_select .list .color {}
-main section .right_order .order_select .list .size {}
-main section .right_order .order_select .close {}
-main section .right_order .order_select .oeder_num {}
-main section .right_order .order_select .oeder_num #minus {}
-main section .right_order .order_select .oeder_num [name=user_num] {}
-main section .right_order .order_select .oeder_num #plus {}
-main section .right_order .order_select .price {}
+main section .right_order .order_select .top {
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+main section .right_order .order_select .top .list {}
+main section .right_order .order_select .top .list .color {}
+main section .right_order .order_select .top.list .size {}
+main section .right_order .order_select .top .close {}
+main section .right_order .order_select .bottom {
+    display:flex;
+    justify-content:space-between;
+}
+main section .right_order .order_select .bottom .oeder_num {}
+main section .right_order .order_select .botttom .oeder_num #minus {}
+main section .right_order .order_select .bottom .oeder_num input {}
+main section .right_order .order_select .bottom .oeder_num #plus {}
+main section .right_order .order_select .bottom .price {}
 /* js에서 select 클릭 시 출력되는 영역 끝 */
 main section .right_order .total {
     display:flex;
