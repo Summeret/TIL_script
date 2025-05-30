@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css복습 | blog</title>
+</head>
+<style>
+    #bg {
+        /* 배경이미지 주소복사 */
+        background:url(https://plus.unsplash.com/premium_photo-1747054588178-d2e3f110232a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8) no-repeat center / cover;
+        /* width:100%; */ height:800px;
+    }
+    #bg .gradient {
+        /* 그라디언트 색상 */
+        /* 직선 그라디언트 : background:linear-gradient(,) */
+        /* 원형 그라디언트 : background:radial-gradient(,) */
+        width:100%; height:100%;
+        background:linear-gradient(90deg,rgba(42, 123, 155, 0.5) 0%, rgba(119, 106, 204, 0.5) 52%, rgba(85, 229, 112, 0.5) 100%);
+        /* opacity:0.5; */ /* 자식,자손까지 영향을 주기때문에 주의해서 사용하기 */
+    }
+    #bg .gradient section {
+        /* a,b 두개의 요소를 grid로 정렬하고 싶다면 그 부모 (section)에게 명령 */
+        display:grid; /* grid 필수선언 */
+        /* grid-template-columns:100px 200px; */ /* 1열,2열 순서대로 자식 너비지정 / 1열은 100px, 2열은 200px */
+        grid-template-columns:200px 1fr;
+        /* 1열 2열 반복(repeat)적용 최소(min) 200, 최대(max) auto 100% 와 같이 인식한다. */
+        /* grid-template-rows:300px 100px; */ /* 1행 300, 2행 100px 자식의 높이 지정 */
+        grid-template-rows:repeat(2, 100px); /* 2행 100px 반복 */
+    }
+    #bg .gradient section > div {
+        border:5px solid red;
+        /* width:100px; height:100px; */ /* grid를 부모한테 따로 명령했기 때문에 자식의 너비는 삭제 */
+        /* 붐에 grid로 열,행 크기 입력 시 자식에는 별도로 크기를 입력하면 안된다. */
+    }
+    #bg .gradient section .a {}
+    #bg .gradient section .b {}
+    #bg .gradient section > div svg {width:24px;}
+    /*  */
+    .box {
+        display:grid;
+        grid-template-areas:
+            'list1 list2 list3'
+            'list4 list5 list6';
+        grid-template-columns:repeat(3, 100px);
+        grid-template-rows:100px 200px;
+        gap:10px 20px;
+    }
+    .box li {border:2px solid #000;}
+    .box li:nth-child(1) {grid-area:list1;}
+    .box li:nth-child(2) {grid-area:list2;}
+    .box li:nth-child(3) {grid-area:list3;}
+    .box li:nth-child(4) {grid-area:list4;}
+    .box li:nth-child(5) {grid-area:list5;}
+</style>
+<body>
+    <ul class="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <div id="bg">
+        <div class="gradient">
+            <section>
+                <div class="a">
+                    <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6 .1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></button>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M528.1 301.3l47.3-208C578.8 78.3 567.4 64 552 64H159.2l-9.2-44.8C147.8 8 137.9 0 126.5 0H24C10.7 0 0 10.7 0 24v16c0 13.3 10.7 24 24 24h69.9l70.2 343.4C147.3 417.1 136 435.2 136 456c0 30.9 25.1 56 56 56s56-25.1 56-56c0-15.7-6.4-29.8-16.8-40h209.6C430.4 426.2 424 440.3 424 456c0 30.9 25.1 56 56 56s56-25.1 56-56c0-22.2-12.9-41.3-31.6-50.4l5.5-24.3c3.4-15-8-29.3-23.4-29.3H218.1l-6.5-32h293.1c11.2 0 20.9-7.8 23.4-18.7z"/></svg></a>
+                </div>
+                <div class="b">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M34.5 239L228.9 44.7c9.4-9.4 24.6-9.4 33.9 0l22.7 22.7c9.4 9.4 9.4 24.5 0 33.9L131.5 256l154 154.8c9.3 9.4 9.3 24.5 0 33.9l-22.7 22.7c-9.4 9.4-24.6 9.4-33.9 0L34.5 273c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M285.5 273L91.1 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.7-22.7c-9.4-9.4-9.4-24.5 0-33.9L188.5 256 34.5 101.3c-9.3-9.4-9.3-24.5 0-33.9l22.7-22.7c9.4-9.4 24.6-9.4 33.9 0L285.5 239c9.4 9.4 9.4 24.6 0 33.9z"/></svg>
+                </div>
+                <div class="c">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M634.9 154.9C457.7-9 182.2-8.9 5.1 154.9c-6.7 6.2-6.8 16.6-.4 23l34.2 34c6.1 6.1 16 6.2 22.4 .4 145.9-133.7 371.3-133.7 517.3 0 6.4 5.9 16.3 5.7 22.4-.4l34.2-34c6.4-6.4 6.3-16.8-.4-23zM320 352c-35.4 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm202.7-83.6c-115.3-101.9-290.2-101.8-405.3 0-6.9 6.1-7.1 16.7-.6 23.2l34.4 34c6 5.9 15.7 6.3 22.1 .8 84-72.6 209.7-72.4 293.5 0 6.4 5.5 16.1 5.1 22.1-.8l34.4-34c6.6-6.5 6.3-17.1-.6-23.2z"/></svg>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -9,6 +9,36 @@
     <script src="./scripts/birth_flower.js"></script>
 </head>
 <body>
-    
+    <main>
+        <ul id="flower_bg">
+            <li>
+                <input type="number" name="user_year" placeholder="출생년도를 입력해주세요.">
+                <span>년도</span>
+            </li>
+            <li>
+                <select class="user_month">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <span>월</span>
+            </li>
+            <li>
+                <input type="number" name="user_day" placeholder="날짜를 입력해주세요.">
+            <span>일</span>
+            </li>
+        </ul>
+        <button type="button" id="flower_chk_btn">나의 탄생화와 꽃말은?</button>
+        <p id="trsult"><!-- 결과출력위치 --></p>
+    </main>
 </body>
 </html>
