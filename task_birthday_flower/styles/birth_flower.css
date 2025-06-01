@@ -1,7 +1,7 @@
 /* birth_flower.css */
 main {
     background:url(https://i.pinimg.com/736x/69/eb/4b/69eb4b7965406dacd632f0eed7ee4164.jpg) no-repeat center /cover;
-    width:500px; height:800px; 
+    width:400px; height:800px; 
     margin:0 auto; padding:250px 0;
     text-align:center;
 }
@@ -28,7 +28,7 @@ main #flower_bg li .user_month {
 }
 main #flower_bg li .user_month option {}
 main #flower_chk_btn {
-    width:400px; padding:20px 40px;
+    width:350px; padding:20px 40px;
     background-color:#4B352A;
     border-radius:50px;
 }
@@ -36,4 +36,7 @@ main #flower_chk_btn span {
     font-size:1.25rem; font-weight:500;
     color:#fff;
 }
-main p {}
+main #result {
+    margin-top:50px;
+    font-size:1.3rem;
+}

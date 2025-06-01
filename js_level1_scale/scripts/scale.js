@@ -4,7 +4,6 @@
 //계산식) 적정체중 = (본인신장-100)*0.9
 //결과식) 당신의 적정체중은 ?kg이며 ?kg 초과되셨습니다.
 //미만과 적정체중은 조건문 배워야 가능하므로 나중에 자바스크립트 추가 예정
-//객체-이벤트-함수
 const userHeight = document.querySelector('input[name*=height]');
 const userWeight = document.querySelector('input[name*=weight]');
 const resultBtn = document.querySelector('#result_btn');
