@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 수학객체</title>
+    <link rel="stylesheet" href="../js_level1_portfolio/styles/reset.css">
+    <style>
+        body,html {
+            height:100vh;
+            background:url(./images/bg_01.jpg) center bottom / cover;
+        }
+        main {
+            background-color:rgba(256,256,256,0.7);
+        }
+    </style>
+    <script src="./scripts/math.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>생년월일부터 경과시간 계산기</h1>
+        <span>생년월일을 선택하세요.</span>
+        <input type="date" id="birthdate" name="birthdate">
+        <button type="button" id="birth_btn">계산</button>
+        <div class="result">
+            <p class="date">경과 날짜 : <em></em>일</p>
+            <p class="time">경과 시간 : <em></em>시간</p>
+        </div>
+    </main>
+</body>
+</html>
