@@ -1,0 +1,74 @@
+<!-- kurlyDB.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마켓컬리 DB 데이터 불러오기(무한스크롤)</title>
+    <link rel="stylesheet" href="../js_level1_portfolio/styles/reset.css">
+    <!-- DOM활용 용도가 아니라 DB불러오는 용도이므로 defer 필요없음 -->
+    <script src="./scripts/kurlyDB.js"></script>
+    <!-- DOM 적용 용도로 defer 필요함 -->
+    <script src="./scripts/kurlyDB_DOM.js" defer></script>
+    <style>
+        header, footer {
+            height:80px; background:#111;
+        }
+        main {}
+        main .bnr {
+            height:70vh; background:#ccc;
+        }
+        main .product {padding:150px 0;}
+        main .product h1{
+            text-align:center; font-size:1.2rem; font-weight:600;
+        }
+        main .product #container {
+            display:flex; flex-flow:row wrap;
+            width:1000px; margin:80px auto 0;
+        }
+        main .product #container li {
+            border:2px solid #eee;
+            width:calc((100% - 20px) / 3);
+            padding-bottom:50px;
+            margin-right:10px;
+            margin-bottom:50px;
+        }
+        main .product #container li:nth-child(3n) {margin-right:0;}
+        main .product #container li img {width:100%;}
+        main .product #container li p {line-height:1.5; padding:0 6px;}
+        main .product #container li .name {}
+        main .product #container li .summary {color:#aaa; font-size:0.875rem;}
+        main .product #container li .price_original del {color:#aaa;}
+        main .product #container li .price {font-size:1.2rem; font-weight:600;}
+        main .product #container li .sale {color:#5f0080; font-weight:800;}
+        main .product #container li .review {font-size:0.875rem; color:#ccc;}
+        /* 광고 애니메이션 */
+        main .ad {}
+        main .ad p {
+            opacity:0; transform:translate(0, 100px);
+            transition:all 1s;
+        }
+        main .ad p img {}
+        main .ad p.active {opacity:1; transform:translate(0,0);} 
+        /* JS / p.active 붙여쓰기 */
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <main>
+        <div class="bnr">배너</div>
+        <div class="product">
+            <h1>product</h1>
+            <ul id="container">
+                <!-- DB삽입위치 -->
+            </ul>
+        </div>
+        <div class="ad">
+            <p><img src="https://product-image.kurly.com/hdims/resize/%3E1900x%3E370/quality/85/src/banner/main/pc/img/b1dd456b-b0a5-4a87-9da0-23bac8523afd.png" alt="광고1"></p>
+            <p><img src="https://product-image.kurly.com/hdims/resize/%3E1900x%3E370/quality/85/src/banner/main/pc/img/df9b3b93-6542-4c9d-9a19-3478a6414f4d.png" alt="광고2"></p>
+            <p><img src="https://product-image.kurly.com/hdims/resize/%3E1900x%3E370/quality/85/src/banner/main/pc/img/a004550c-c5c7-488b-bd43-de07c2a8484f.jpg" alt="광고3"></p>
+        </div>
+    </main>
+    <footer>footer</footer>
+</body>
+</html>
