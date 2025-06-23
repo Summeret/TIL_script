@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>swiper-direction1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        * {margin:0; padding:0; line-height:1.0; box-sizing:border-box;}
+        .swiper {
+            width:1240px; height:450px;
+        }
+        .swiper .swiper-wrapper {}
+        .swiper .swiper-wrapper .swiper-slide {
+            text-align:center;
+        }
+        .swiper .swiper-wrapper .swiper-slide * {
+            margin-bottom:30px;
+            position:relative; top:40%;
+        }
+        .swiper .swiper-wrapper .swiper-slide h1 {
+            font-size:1.5rem;
+        }
+        .swiper .swiper-wrapper .swiper-slide p {
+            font-size:1.5rem;
+        }
+        .swiper .swiper-wrapper .swiper-slide a {
+            text-decoration:none;
+            color:#000;
+            background-color:#fff;
+            border-radius:50px;
+            padding:5px 20px;
+            font-size:1rem;
+
+        }
+        .swiper .swiper-wrapper .slide1 {
+            background-image:url(./images/bnr1.jpg);
+        }
+        .swiper .swiper-wrapper .slide2 {
+            background-image:url(./images/bnr2.jpg);
+        }
+        .swiper .swiper-wrapper .slide3 {
+            background-image:url(./images/bnr3.jpg);
+        }
+        .swiper .swiper-wrapper .slide4 {
+            background-image:url(./images/bnr4.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper ad">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <h1>고래인형특가</h1>
+                <p>9,900원</p>
+                <a href="#">사러가기</a>
+            </div>
+            <div class="swiper-slide slide2">
+                <h1>핸드폰악세사리</h1>
+                <p>10,900원</p>
+                <a href="#">사러가기</a>
+            </div>
+            <div class="swiper-slide slide3">
+                <h1>카메라폰케이스</h1>
+                <p>11,900원</p>
+                <a href="#">사러가기</a>
+            </div>
+            <div class="swiper-slide slide4">
+                <h1>노트특가</h1>
+                <p>7,900원</p>
+                <a href="#">사러가기</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const adSwiper = new Swiper('.ad',{
+            autoplay:{delay:2000},
+            loop:true,
+            direction:'vertical'
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>swiper-direction1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        * {margin:0; padding:0; line-height:1.0; box-sizing:border-box;}
+        #product {
+            width:400px; height:400px;
+            /* overflow:hidden; */ /* 개발자도구를 보면 내가 설정한 값이 우선순위가 높으므로 기본값인 visible을 두고 hidden을 새로 적용해준다. -> 내가 설정한 크기값이 적용된다. */
+        }
+        #product .swiper-wrapper {}
+        #product .swiper-wrapper .swiper-slide {}
+        #product .swiper-wrapper .swiper-slide img {
+            height:100%; width:100%; /* 가로크기는 억지로 맞춘것이기 때문에 작업할 시 이미지태그가 아닌 background속성으로 이미지 삽입하기(이미지태그로 css할 시 플러그인 css와 충돌하여 적용되지 않음.) */
+            /* 또는 포토샵이나 피그마로 크기에 맞춰서 이미지 제작하기 */
+            /* transform:translateX(); */
+            /* position:relative; left:; */
+        }
+        #product .swiper-wrapper .slide1 {}
+        #product .swiper-wrapper .slide2 {}
+        #product .swiper-wrapper .slide3 {}
+        #product .swiper-wrapper .slide4 {}
+    </style>
+</head>
+<body>
+    <div class="swiper" id="product">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1"><img src="./images/bnr1.jpg" alt="#"></div>
+            <div class="swiper-slide slide2"><img src="./images/bnr2.jpg" alt="#"></div>
+            <div class="swiper-slide slide3"><img src="./images/bnr3.jpg" alt="#"></div>
+            <div class="swiper-slide slide4"><img src="./images/bnr4.jpg" alt="#"></div>
+        </div>
+    </div>
+    <script>
+        const productS = new Swiper('#product',{
+            loop:true,
+            autoplay:{delay:1000},
+            effect:'cube',
+            cubeEffect:{
+                shadow:true, //그림지보기(true), 숨기기(false)
+                shadowOffset:100, //그림자 y 위치
+                shadowScale:0.8, //그림자 크기(기본값 1)
+            },
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
